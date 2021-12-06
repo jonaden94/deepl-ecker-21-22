@@ -280,7 +280,7 @@ def run_training(model, optimizer, loss_function, device, num_epochs,
             master_bar.write(f'Train loss: {epoch_train_loss:.2f}, val loss: {epoch_val_loss:.2f}, train acc: {epoch_train_acc:.3f}, val acc {epoch_val_acc:.3f}')
         
         if scheduler is not None:
-            scheduler.step()
+            scheduler.step(epoch_val_loss)
 
 
         if stopper is not None:
